@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday, Sayang!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: white;
+      text-shadow: 2px 2px 4px #ff4d6d;
+      animation: glow 2s infinite alternate;
+      z-index: 2;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d; }
+      to   { text-shadow: 0 0 20px #fff, 0 0 40px #ff4d6d; }
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: transform 0.2s;
+      z-index: 2;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    .message {
+      display: none;
+      font-size: 1.3em;
+      color: white;
+      margin-top: 20px;
+      text-align: center;
+      max-width: 700px;
+      line-height: 1.6em;
+      z-index: 2;
+    }
+
+    .photo-container {
+      display: none;
+      flex-direction: row;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .photo {
+      width: 180px;
+      height: 230px;
+      object-fit: contain;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 77, 109, 0.7);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      background: red;
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+      z-index: 1;
+    }
+
+    @keyframes rise {
+      0%   { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 24px;
+      animation: floatUp 4s ease-in forwards;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0) scale(1); opacity: 1; }
+      to   { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+
+    /* Bintang background */
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    /* Kue ulang tahun */
+    .cake {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+      font-size: 80px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Marquee text */
+    .marquee {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      font-size: 1.2em;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 20s linear infinite;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0%); }
+      to   { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Musik -->
+  <audio id="music" src="love2.mp3" autoplay loop muted></audio>
+
+  <h1>🎂 Happy Birthday, Sayang! 🎂</h1>
+  <button class="btn" onclick="showMessage()">klik 💝</button>
+  
+  <div class="message" id="message">
+    Selamat ulang tahun cintaku yang paling cantik imut dan lucuuu 💕  
+    Semoga panjang umur, sehat selalu, dan bahagia setiap hari, semoga kedepannya bisa jadi pribadi yg lebih baik lagi
+    toxicnya di kurang"in ya cantikk, dan juga harus rajin ibadah jangann malas" (kaya saya akwoakwo)  
+    semoga semua impian kamu bisa tercapai ya sayang, dan aku bisa terus berada di samping kamu  
+    untuk merayakan banyak ulang tahun kamu lagi bersama". maaf kalo selama ini aku banyak salah 
+  dan sering buat kmu nangisss, aku bener" minta maaf semoga kedepannya aku bisa ngebuat kamu lebih bahagia sama aku
+dan makasih untuk semuanya makasih udah mau sama aku, makasih udah selalu ada buat aku makasih udahh datang di hidup aku maksih banyakk ya sayaang
+aku bener" bersyukur punya kamu di hidup akuu, ya mungkin itu ji saja:v satu lagiii 
+I LOOVEEE U SOO MUCH BABEEE 
+ </div>
+
+  <div class="photo-container" id="photoContainer">
+    <img src="faya1.jpg" alt="Foto 1" class="photo">
+    <img src="faya2.jpg" alt="Foto 2" class="photo">
+    <img src="faya3.jpg" alt="Foto 3" class="photo">
+  </div>
+
+  <!-- Kue ulang tahun -->
+  <div class="cake" id="cake">🎂🕯️🕯️🕯️</div>
+
+  <!-- Marquee ucapan -->
+  <div class="marquee">
+    <span>💖 hapibesdey! Maaf kalo biasa aja maklum pemula hehe 💖 
+      btw when yh aku di kiss? HEHEE  
+    </span>
+  </div>
+
+  <script>
+    // bikin balon terbang random
+    function createBalloon() {
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      document.body.appendChild(balloon);
+      const colors = ["#ff4d6d", "#ffaf40", "#6c5ce7", "#00cec9", "#55efc4"];
+      balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+      balloon.style.left = Math.random() * window.innerWidth + "px";
+      balloon.style.animationDuration = (5 + Math.random() * 5) + "s";
+      setTimeout(() => balloon.remove(), 10000);
+    }
+    setInterval(createBalloon, 800);
+
+    // bikin bintang di background
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      const size = Math.random() * 3 + 2;
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+      star.style.top = Math.random() * window.innerHeight + "px";
+      star.style.left = Math.random() * window.innerWidth + "px";
+      star.style.animationDuration = (1 + Math.random() * 2) + "s";
+      document.body.appendChild(star);
+    }
+
+    function showMessage() {
+      document.getElementById("message").style.display = "block";
+      document.getElementById("photoContainer").style.display = "flex";
+      document.getElementById("cake").style.display = "block";
+
+      // unmute musik biar kedengaran setelah user klik
+      const music = document.getElementById("music");
+      music.muted = false;
+      music.play();
+
+      // confetti 🎉
+      for (let i = 0; i < 120; i++) {
+        const confetti = document.createElement("div");
+        confetti.innerHTML = "🎉";
+        confetti.style.position = "absolute";
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.top = "-20px";
+        confetti.style.fontSize = "24px";
+        confetti.style.animation = `fall ${2 + Math.random() * 3}s linear`;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 4000);
+      }
+
+      // love hearts ❤️
+      for (let i = 0; i < 40; i++) {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.bottom = "0px";
+        heart.style.fontSize = (20 + Math.random() * 30) + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
+    }
+
+    // animasi confetti jatuh
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        to { transform: translateY(120vh); }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
